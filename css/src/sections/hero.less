@@ -1,0 +1,254 @@
+/*
+HERO SECTION START
+*/
+
+.hero-section {
+  position: relative;
+  background-color: @back-color;
+  padding: 18px 0 291px;
+}
+
+.hero-canvas() {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  margin: 0 auto 0;
+}
+
+.hero-background {
+  .hero-canvas;
+  overflow: hidden;
+  background-color: @back-color;
+}
+
+.hero-back-blend {
+  .hero-canvas;
+  mix-blend-mode: color-burn;
+}
+
+@sun-size-s: 300px;
+@sun-size-l: 660px;
+.create-sun(@d) {
+  width: @d;
+  height: @d;
+  border-radius: unit((@d / 2), px);
+}
+.hero-back-sun {
+  position: absolute;
+  .create-sun(@sun-size-s);
+  top: auto;
+  bottom: 66px;
+  left: auto;
+  right: 48px;
+  background-blend-mode: overlay;
+  background: url("./../assets/Round text.svg") no-repeat center/119% #FBCE51;
+}
+
+.parallax-item {
+  .hero-canvas;
+}
+
+.hero-back-city {
+  .hero-canvas;
+  right: -110px;
+
+  &:after {
+    content: "";
+    background: url("./../assets/city_fxd.png") no-repeat center/contain;
+    position: absolute;
+    width: 885.5px;
+    height: 238px;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.hero-back-chessman1,
+.hero-back-chessman2,
+.hero-back-chessman3,
+.hero-back-chessman4 {
+  position: absolute;
+  width: auto;
+
+  img {
+    height: 100%;
+  }
+}
+
+.hero-back-chessman1 {
+  display: none;
+}
+
+.hero-back-chessman2 {
+  transform: rotate(-10.59deg);
+  height: 122px;
+  right: 140px;
+  bottom: -15px;
+}
+.hero-back-chessman3 {
+  transform: rotate(-6deg);
+  height: 117px;
+  right: 260px;
+  bottom: 109px;
+}
+.hero-back-chessman4 {
+  transform: rotate(15deg);
+  height: 105px;
+  right: 92px;
+  bottom: 167px;
+}
+
+.logo {
+  display: block;
+  height: auto;
+  width: 213px;
+}
+
+.heading-container {
+  max-width: 100%;
+  margin-top: 40px;
+}
+
+.heading {
+  margin-bottom: 24px;
+}
+.heading-span--center, .heading-span--right {
+  display: block;
+}
+.heading-span--center {
+  text-align: center;
+}
+.heading-span--right {
+  text-align: right;
+}
+
+.hero-text {
+  text-align: left;
+  font-size: 18px;
+  margin-bottom: 32px;
+  line-height: 23.4px; /*For Pixel Perfect fit*/
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  grid-gap: 14px;
+
+  .primary-button, .primary-button-invert {
+    width: auto;
+  }
+}
+
+
+.breakpoint-medium({
+  .hero-section {
+    padding: 26px 0 131px;
+  };
+
+  .hero-back-sun {
+    position: absolute;
+    .create-sun(@sun-size-l);
+    top: -40px;
+    bottom: auto;
+    left: calc(50% - 10px);
+    right: auto;
+  }
+
+  .hero-back-city {
+    left: calc(25% - 700px);
+
+    &:after {
+      content: "";
+      width: 1623.5px;
+      height: 433.5px;
+      left: auto;
+      right: auto;
+    }
+  }
+
+  .hero-back-chessman2 {
+    height: 244px;
+    bottom: -35px;
+    right: 30px;
+  }
+
+  .hero-back-chessman3 {
+    height: 256px;
+    right: 125px;
+    bottom: 170px;
+  }
+
+  .hero-back-chessman4 {
+    height: 252.5px;
+    left: calc(50% + 390px);
+    right: auto;
+    bottom: 280px;
+    display: none;
+  }
+
+  .logo {
+    width: 245px;
+  }
+
+  .heading-container {
+    max-width: 80%;
+  }
+
+  .hero-text {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .hero-buttons {
+    flex-direction: row;
+    justify-content: space-between;
+    grid-gap: 16px;
+
+    .primary-button, .primary-button-invert {
+      width: calc(50% - 16px);
+    }
+  }
+});
+
+.breakpoint-large({
+  .hero-back-chessman1 {
+    height: 122px;
+    bottom: 18px;
+    left: calc(50% + 550px);
+    display:block;
+  }
+
+  .hero-back-chessman2 {
+    bottom: -35px;
+    left: calc(50% + 170px);
+    right: auto;
+  }
+
+  .hero-back-chessman3 {
+    left: calc(50% + 60px);
+    right: auto;
+    bottom: 170px;
+  }
+
+  .hero-back-chessman4 {
+    transform: rotate(7.6deg);
+    left: calc(50% + 390px);
+    right: auto;
+    bottom: 280px;
+    display: block;
+  }
+
+  .heading-container {
+    max-width: 60%;
+    width: 542px; /* For Pixel Perfect fit*/
+    margin-top: 61px;
+  }
+});
+
+.breakpoint-xl({
+  .hero-back-city {
+    left: auto;
+  }
+});
