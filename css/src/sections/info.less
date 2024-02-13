@@ -122,11 +122,16 @@ INFO SECTION START
 
 .breakpoint-large({
   .info-container {
-    display: flex;
     margin-bottom: 200px;
+  }
+});
+
+@media all and (min-width: 1200px) {
+  .info-container {
+    display: flex;
   }
 
   .info-image {
     position: absolute;
   }
-});
+}

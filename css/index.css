@@ -718,8 +718,12 @@ INFO SECTION START
 }
 @media all and (min-width: 1024px) {
   .info-container {
-    display: flex;
     margin-bottom: 200px;
+  }
+}
+@media all and (min-width: 1200px) {
+  .info-container {
+    display: flex;
   }
   .info-image {
     position: absolute;
@@ -807,8 +811,8 @@ PARTICIPANT START
   .participant-photo img {
     max-width: 320px;
     max-height: 320px;
-    width: inherit;
-    height: 320px;
+    width: 100%;
+    height: auto;
   }
   .participant-name {
     margin-bottom: 6px;
@@ -866,7 +870,6 @@ STEPS SECTION START
 }
 .steps-slide {
   background: url("../assets/cooper.png") center / auto no-repeat #E9DED4;
-  mix-blend-mode: color-burn;
   padding: 62px 20px 34px;
 }
 .steps-slide.card {
@@ -940,7 +943,7 @@ STEPS SECTION START
   animation: plane-fly-x-s 4s infinite alternate ease-in-out, plane-fly-y-s 1.5s infinite alternate ease-in-out;
 }
 .steps-decoration img {
-  width: 100%;
+  width: 400px;
   max-width: max-content;
 }
 .steps-slider-controls {
@@ -1040,7 +1043,6 @@ STEPS SECTION START
   }
   .card {
     background: url("../assets/cooper.png") center / auto no-repeat #E9DED4;
-    mix-blend-mode: color-burn;
   }
   .steps-decoration {
     position: absolute;
