@@ -526,7 +526,7 @@ TICKER SECTION START
   }
 }
 .ticker-items {
-  display: block;
+  display: flex;
   white-space: nowrap;
 }
 .ticker-item {
